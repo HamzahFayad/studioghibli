@@ -1,0 +1,159 @@
+@use "animation";
+@import "../00-settings/vars";
+@import "../01-tools/mixins";
+
+.previous {
+  background-color: $secondary-color;
+  color: $primary-color;
+  position: absolute;
+  display: inline-block;
+  padding: 6px;
+  margin-top: 2%;
+  margin-left: 0.2%;
+  z-index: 1;
+}
+
+.nav {
+  display: grid;
+  grid-area: 2/1/2/4; 
+  .nav__list {
+    @include flex-layout(row, wrap, space-evenly);
+    list-style: none;
+    padding: 2px;
+    margin: 2%;
+  }
+  .time {
+    background: $quarterny-color;
+    width: 80vw;
+    height: 1vh;
+    margin: 1% auto;
+  }
+}
+.nav__item {
+  font-size: 1.6em;
+  margin-bottom: 0.5%;
+  .nav__link {
+    color: $primary-color;
+    background: $secondary-color;
+    padding: 8px;
+  }
+}
+
+.content {
+  width: 90%;
+  margin: auto;
+  @include grid-layout(grid, repeat(auto-fit, minmax(20em, 1fr)), 8px);
+  grid-column-start: 1;
+  grid-column-end: 4;
+  .article__title {
+    text-align: center;
+    color: $text-color;
+    font-family: monospace;
+    font-weight: bolder;
+    padding: 12px;
+  }
+  .article__cover {
+    width: 80%;
+    display: block;
+    @include block-center;
+    box-shadow: 4px 2px 6px $secondary-color;
+    transition: opacity 2s 0.5s;
+    //opacity: 0;
+    //margin-left: 9%;
+    //display: block;
+  }
+}
+
+.article__content {
+  @include block-center-variable(4%, 10%);
+  color: $secondary-color;
+  margin: auto;
+}
+.article__item {
+  background: $background-color;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  @include position(0, 0, 0, 0);
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  background-color: $secondary-color;
+  .text {
+    color: $background-color;
+    font-size: 1.4em;
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .star {
+    width: 20%;
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    animation: rotate 2s ease-out infinite alternate;
+  }
+}
+
+.youtube--logo {
+  position: absolute;
+  top: 20%;
+  left: 38%;
+  width: 25%;
+}
+.youtube--logo:hover{
+    transform: scale(1.2);
+    animation: rotate .6s ease-in-out;
+}
+
+.overlay--gallery {
+  @include grid-layout(grid, repeat(auto-fit, minmax(40em, 1fr)), 12px);
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  .gallery-img1,
+  .gallery-img2 {
+    width: 40%;
+    outline: 1px solid $quarterny-color;
+    outline-offset: -6px;
+  }
+  .gallery-content{
+    width: 40%;
+    color: $background-color;
+    text-align: center;
+    margin-top: 4%;
+  }
+}
+
+.article__item:hover {
+  .gallery-img1,
+  .gallery-img2 {
+    animation: appear 1s ease-in-out;
+  }
+}
+
+.article__item:hover .overlay {
+  opacity: 1;
+}
+
+.arrow {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+}
+.arrow {
+  span {
+    display: block;
+    width: 20px;
+    height: 22px;
+    border-bottom: 4.5px solid $tertiary-color;
+    border-right: 4.5px solid $tertiary-color;
+    margin: -8px;
+    animation: arrow 2s infinite;
+  }
+}

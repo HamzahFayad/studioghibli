@@ -1,0 +1,41 @@
+/*mixins
+functions without return-value
+*/
+
+@mixin block-center {
+  margin: 2% auto;
+}
+
+/*mixin with parameters*/
+@mixin block-center-variable($margin-top-btm, $padding-all) {
+  margin: $margin-top-btm auto;
+  padding: $padding-all;
+}
+
+@mixin flex($direction:row, $wrap:wrap, $main-axis:center, $cross-axis:center, $crossAxis-mulitline:stretch) {
+  display: flex;
+  flex-flow: $direction $wrap;
+  justify-content: $main-axis;
+  align-items: $cross-axis;
+  align-content: $crossAxis-mulitline;
+}
+
+/*new*/
+@mixin flex-layout($row_column, $wrap_nowrap, $justify) {
+  display: flex;
+  flex-flow: $row_column $wrap_nowrap;
+  justify-content: $justify;
+}
+
+@mixin grid-layout($display, $gtc, $gap) {
+  display: $display;
+  grid-template-columns: $gtc;
+  grid-gap: $gap;
+}
+
+@mixin position($top,$btm, $left, $right){
+  top: $top;
+  bottom: $btm;
+  left: $left;
+  right: $right;
+}

@@ -1,0 +1,66 @@
+@use "./02-generic/reset";
+@use "./00-settings/fonts";
+@use "./03-base/elements.scss";
+@use "./04-components/components.scss";
+@use "./04-components/animation";
+@import "./00-settings/vars";
+@import "./01-tools/mixins";
+
+.parallax {
+  background-image: url("../img/main.png");
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.header {
+  text-align: center;
+  color: $primary-color;
+  font-size: 3vw; 
+  padding: 44px;
+  z-index: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing-machine 3.5s steps(40, end) alternate infinite;
+}
+
+.img-animation {
+  @include flex-layout(column, wrap, stretch);
+}
+.img {
+  width: 100%;
+  max-width: 40%;
+}
+.img__kiki {
+  animation: fly 5s infinite;
+  margin-left: 75%;
+}
+.img__noface {
+  margin: auto;
+  max-width: 15%;
+  animation: spirit 6s infinite alternate-reverse;
+}
+.img__howl {
+  animation: jump 5s infinite;
+}
+.title--head {
+  text-align: center;
+  font-size: 2em;
+  color: $secondary-color;
+  @include block-center;
+}
+
+//###
+
+.partiallyVisible{
+  opacity: 0.5;
+  background: pink;
+  border: 4px solid red;
+}
+
+.fullyVisible{
+  opacity: 1;
+  background: green;
+}

@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../../scss/00-settings/_vars.scss","../../scss/01-tools/_mixins.scss","../../scss/03-base/elements.scss"],"names":[],"mappings":"AAAA;AASA;ACTA;AAAA;AAAA;AAQA;AAcA;ACnBA;AAAA;EAEE;EACA,YFLc;EEMd;;;AAEF;EACI;EACA;EACA,YFVc;EEWd;;;AAEJ;EDVE;ECYA;EACA","file":"elements.css"}

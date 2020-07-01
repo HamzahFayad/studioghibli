@@ -1,0 +1,28 @@
+/*color theme*/
+/*max-block-width*/
+/*mixins
+functions without return-value
+*/
+/*mixin with parameters*/
+/*new*/
+body,
+html {
+  height: 100%;
+  background: #1b9dcf;
+  margin: auto;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+  background: #293133;
+  border-radius: 25px;
+}
+
+footer {
+  margin: 2% auto;
+  color: #ffffff;
+  text-align: center;
+}
+
+/*# sourceMappingURL=elements.css.map */

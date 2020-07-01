@@ -1,0 +1,29 @@
+/*fonts*/
+$main-font-family: sans-serif;
+$main-font-size: 1rem;
+
+html{
+	font-family: $main-font-family;
+	font-size: $main-font-size;
+}
+
+$start: 1; 
+$end: 6;
+$font-multiplier: 1.5;
+ 
+@for $i from $start through $end{
+	@if $font-multiplier >= 1{
+		h#{$i}{
+			font-size: $main-font-size * $font-multiplier;
+		}
+		$font-multiplier: $font-multiplier - 0.2;
+	}@else{
+		h#{$i}{font-size: $main-font-size;
+		}	 
+	}
+}
+
+
+p,code{
+	font-size: $main-font-size * 1;
+}

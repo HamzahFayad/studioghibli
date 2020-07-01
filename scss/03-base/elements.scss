@@ -1,0 +1,20 @@
+@import "../00-settings/vars";
+@import "../01-tools/mixins";
+
+body,
+html {
+  height: 100%;
+  background: $primary-color;
+  margin: auto;
+}
+main { 
+    width: 90%;
+    margin: auto;
+    background: $secondary-color;
+    border-radius: 25px;
+  }
+footer {
+  @include block-center;
+  color: #ffffff;
+  text-align: center;
+}
